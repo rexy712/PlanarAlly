@@ -37,7 +37,7 @@ export function loadShapeData(shape: IShape, data: ApiShape): void {
         showBadge: data.show_badge,
         isLocked: data.is_locked,
         oddHexOrientation: data.odd_hex_orientation,
-        size: data.size,
+        size: { x: data.size_x, y: data.size_y },
         showCells: data.show_cells,
         ...(data.cell_fill_colour !== null ? { cellFillColour: data.cell_fill_colour } : {}),
         ...(data.cell_stroke_colour !== null ? { cellStrokeColour: data.cell_stroke_colour } : {}),
@@ -66,6 +66,8 @@ export function exportShapeData(shape: IShape): ApiCoreShape {
     const defaultAccess = accessSystem.getDefault(shape.id);
     const props = getProperties(shape.id)!;
     const uuid = getGlobalId(shape.id)!;
+
+    console.log(props);
 
     return {
         type_: shape.type,
@@ -100,7 +102,8 @@ export function exportShapeData(shape: IShape): ApiCoreShape {
         is_teleport_zone: teleportZoneSystem.isTeleportZone(shape.id),
         character: shape.character ?? null,
         odd_hex_orientation: props.oddHexOrientation,
-        size: props.size,
+        size_x: props.size.x,
+        size_y: props.size.y,
         show_cells: props.showCells,
         cell_fill_colour: props.cellFillColour ?? null,
         cell_stroke_colour: props.cellStrokeColour ?? null,

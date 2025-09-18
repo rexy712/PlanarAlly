@@ -3,6 +3,7 @@ import type {
     ShapeSetIntegerValue,
     ShapeSetOptionalStringValue,
     ShapeSetStringValue,
+    ShapeSetSizeValue,
 } from "../../../../apiTypes";
 import type { GlobalId, LocalId } from "../../../../core/id";
 import { UI_SYNC } from "../../../../core/models/types";
@@ -47,7 +48,7 @@ socket.on(
 
 socket.on(
     "Shape.Options.Size.Set",
-    wrapSystemCall<ShapeSetIntegerValue>(propertiesSystem.setSize.bind(propertiesSystem)),
+    wrapSystemCall<ShapeSetSizeValue>(propertiesSystem.setSize.bind(propertiesSystem)),
 );
 
 socket.on(

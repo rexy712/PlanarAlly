@@ -5,6 +5,8 @@ import { buildState } from "../../../core/systems/state";
 
 import { VisionBlock } from "./types";
 
+import type { ShapeSize } from "../../interfaces/shape";
+
 export interface ShapeProperties {
     name: string;
     nameVisible: boolean;
@@ -17,7 +19,7 @@ export interface ShapeProperties {
     isDefeated: boolean;
     isLocked: boolean;
     // grid related
-    size: number; // if 0, infer size
+    size: ShapeSize; // if 0, infer size
     showCells: boolean;
     cellFillColour: string;
     cellStrokeColour: string;
@@ -48,7 +50,7 @@ const state = buildState<PropertiesState, PropertiesState>(
         // showBadge: false,
         // isDefeated: false,
         // isLocked: false,
-        // size: 0,
+        // size: { x: 0, y: 0 },
         // showCells: true,
         // cellFillColour: "rgba(225, 0, 0, 0.2)",
         // cellStrokeColour: "rgba(225, 0, 0, 0.8)",
@@ -71,7 +73,7 @@ const DEFAULT_PROPERTIES: () => ShapeProperties = () => ({
     blocksMovement: false,
     blocksVision: VisionBlock.No,
     showBadge: false,
-    size: 0,
+    size: { x: 0, y: 0 },
     showCells: false,
     cellFillColour: "rgba(225, 0, 0, 0.2)",
     cellStrokeColour: "rgba(225, 0, 0, 0.8)",

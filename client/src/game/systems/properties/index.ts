@@ -31,6 +31,7 @@ import { propertiesState } from "./state";
 import type { ShapeProperties } from "./state";
 import { VisionBlock } from "./types";
 import { checkVisionSources } from "./vision";
+import type { ShapeSize } from "../../interfaces/shape";
 
 const { mutable, mutableReactive: $, DEFAULT } = propertiesState;
 
@@ -256,13 +257,14 @@ class PropertiesSystem implements ShapeSystem {
         _shape.invalidate(!_shape.triggersVisionRecalc);
     }
 
-    setSize(id: LocalId, size: number, syncTo: Sync): void {
+    setSize(id: LocalId, size: ShapeSize, syncTo: Sync): void {
         const shape = mutable.data.get(id);
         if (shape === undefined) {
             return console.error("[Properties.setSize] Unknown local shape.");
         }
 
-        if (size < 0) size = 0;
+        if (size.x < 0) size.x = 0;
+        if (size.y < 0) size.y = 0;
 
         shape.size = size;
 

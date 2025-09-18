@@ -40,7 +40,8 @@ class ApiCoreShape(TypeIdModel):
     auras: list[ApiAura]
     character: int | None = Field(..., typeId="CharacterId", noneAsNull=True)
     odd_hex_orientation: bool
-    size: int
+    size_x: int
+    size_y: int
     show_cells: bool
     cell_fill_colour: str | None = Field(..., noneAsNull=True)
     cell_stroke_colour: str | None = Field(..., noneAsNull=True)

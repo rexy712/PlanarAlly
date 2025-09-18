@@ -23,14 +23,15 @@ const owned = accessState.hasEditAccess;
 const shape = computed(() => getShape(selectedState.reactive.focus!));
 
 const size = computed(() => {
-    if (shapeProps.value!.size === 0) {
+    //if (shapeProps.value!.size === 0) {
         return shape.value!.getSize(locationSettingsState.reactive.gridType.value);
-    }
-    return shapeProps.value!.size;
+    //}
+    //TODO
+    //return shapeProps.value!.size;
 });
 
 function setInferSize(event: Event): void {
-    _setSize(getChecked(event) ? 0 : size.value);
+    _setSize(getChecked(event) ? 0 : size.value.x);
 }
 
 function setSize(event: Event): void {
@@ -39,7 +40,8 @@ function setSize(event: Event): void {
 
 function _setSize(size: number): void {
     if (!owned.value || shape.value === undefined) return;
-    propertiesSystem.setSize(shape.value.id, size, SERVER_SYNC);
+    //TODO
+    propertiesSystem.setSize(shape.value.id, { x: size, y: size }, SERVER_SYNC);
 }
 
 function setShowCell(event: Event): void {
@@ -85,7 +87,7 @@ function setOddHexOrientation(event: Event): void {
             <input
                 id="shapeselectiondialog-infer-size"
                 type="checkbox"
-                :checked="shapeProps.size === 0"
+                :checked="shapeProps.size === null"
                 style="grid-column-start: toggle"
                 class="styled-checkbox"
                 :disabled="!owned"
@@ -99,9 +101,9 @@ function setOddHexOrientation(event: Event): void {
                 type="number"
                 :min="1"
                 :step="1"
-                :value="size"
+                :value="size.x"
                 style="grid-column: 2/-1; width: 3rem; justify-self: flex-end"
-                :disabled="!owned || shapeProps.size === 0"
+                :disabled="!owned || shapeProps.size === null"
                 @change="setSize"
             />
         </div>

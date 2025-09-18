@@ -21,6 +21,11 @@ export type ApiDataBlock = ApiRoomDataBlock | ApiShapeDataBlock | ApiUserDataBlo
 
 export type InitiativeDirection = -1 | 0 | 1;
 
+export interface ApiShapeSize {
+    x: number;
+    y: number;
+}
+
 export interface ApiAsset {
   id: AssetId;
   name: string;
@@ -179,7 +184,8 @@ export interface ApiCoreShape {
   auras: ApiAura[];
   character: CharacterId | null;
   odd_hex_orientation: boolean;
-  size: number;
+  size_x: number;
+  size_y: number;
   show_cells: boolean;
   cell_fill_colour: string | null;
   cell_stroke_colour: string | null;
@@ -749,6 +755,10 @@ export interface ShapeSetTeleportLocationValue {
 export interface TeleportLocation {
   id: number;
   spawnUuid: GlobalId;
+}
+export interface ShapeSetSizeValue  {
+    shape: GlobalId;
+    value: ApiShapeSize;
 }
 export interface ShapeTextSizeUpdate {
   uuid: GlobalId;
