@@ -336,11 +336,10 @@ export abstract class Shape implements IShape {
 
     getSize(gridType: GridType): ShapeSize {
         const props = getProperties(this.id)!;
-        // TODO
-        //if (props.size !== null) return props.size;
+        if (props.size.x !== 0) return props.size;
 
         const bbox = this.getAABB();
-        const x = getCellCountFromWidth(bbox.w, gridType)
+        const x = getCellCountFromWidth(bbox.w, gridType);
         const y = getCellCountFromHeight(bbox.h, gridType);
         const cutoff = gridType === GridType.Square ? 0.25 : 0.125;
         const customRound = (n: number): number => (n % 1 >= cutoff ? Math.ceil(n) : Math.floor(n));

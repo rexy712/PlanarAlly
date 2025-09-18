@@ -46,10 +46,7 @@ socket.on(
     wrapSystemCall<ShapeSetBooleanValue>(propertiesSystem.setOddHexOrientation.bind(propertiesSystem)),
 );
 
-socket.on(
-    "Shape.Options.Size.Set",
-    wrapSystemCall<ShapeSetSizeValue>(propertiesSystem.setSize.bind(propertiesSystem)),
-);
+socket.on("Shape.Options.Size.Set", wrapSystemCall<ShapeSetSizeValue>(propertiesSystem.setSize.bind(propertiesSystem)));
 
 socket.on(
     "Shape.Options.ShowCells.Set",

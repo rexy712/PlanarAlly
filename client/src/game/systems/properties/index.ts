@@ -270,7 +270,7 @@ class PropertiesSystem implements ShapeSystem {
 
         if (syncTo.server) {
             const shape = getGlobalId(id);
-            if (shape) sendShapeSetSize({ shape, value: size });
+            if (shape) sendShapeSetSize({ shape, value: { x: size.x, y: size.y } });
         }
 
         const d = $.data.get(id);

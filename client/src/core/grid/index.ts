@@ -81,10 +81,7 @@ function snapShapeToHexGrid(
     return min[0]!;
 }
 
-function snapShapeToSquareGrid(
-    position: GlobalPoint,
-    size: ShapeSize,
-): GlobalPoint {
+function snapShapeToSquareGrid(position: GlobalPoint, size: ShapeSize): GlobalPoint {
     const evenWidth = size.x % 2 === 0;
     const evenHeight = size.y % 2 === 0;
 
@@ -105,7 +102,7 @@ function snapShapeToSquareGrid(
             const niv = cellPoints[(i + 1) % cellPoints.length]!;
             if (evenWidth && iv.x !== niv.x) continue;
             if (evenHeight && iv.y !== niv.y) continue;
-            candidatePoints.push(toGP((iv.x +  niv.x) / 2, (iv.y + niv.y) / 2));
+            candidatePoints.push(toGP((iv.x + niv.x) / 2, (iv.y + niv.y) / 2));
         }
     }
     let min: [GlobalPoint | null, number] = [null, Infinity];
