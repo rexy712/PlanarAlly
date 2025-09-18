@@ -2,10 +2,9 @@ import type { DeepReadonly } from "vue";
 
 import type { LocalId } from "../../../core/id";
 import { buildState } from "../../../core/systems/state";
+import type { ShapeSize } from "../../interfaces/shape";
 
 import { VisionBlock } from "./types";
-
-import type { ShapeSize } from "../../interfaces/shape";
 
 export interface ShapeProperties {
     name: string;

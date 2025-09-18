@@ -23,6 +23,7 @@ import {
     sendShapeSetStrokeColour,
 } from "../../api/emits/shape/options";
 import { getGlobalId, getShape } from "../../id";
+import type { ShapeSize } from "../../interfaces/shape";
 import { doorSystem } from "../logic/door";
 import { selectedState } from "../selected/state";
 
@@ -31,7 +32,6 @@ import { propertiesState } from "./state";
 import type { ShapeProperties } from "./state";
 import { VisionBlock } from "./types";
 import { checkVisionSources } from "./vision";
-import type { ShapeSize } from "../../interfaces/shape";
 
 const { mutable, mutableReactive: $, DEFAULT } = propertiesState;
 

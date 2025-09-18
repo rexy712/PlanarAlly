@@ -1,10 +1,9 @@
+import type { ShapeSize } from "../../game/interfaces/shape";
 import { type GlobalPoint, toGP, getPointDistanceSquared } from "../geometry";
 import { getClosestPoint } from "../math";
 
 import { axialRound } from "./hex";
 import type { AxialCoords } from "./types";
-
-import type { ShapeSize } from "../../game/interfaces/shape";
 
 /*
 
