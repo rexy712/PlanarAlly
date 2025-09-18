@@ -589,4 +589,3 @@ async def generate_thumbnails(data, loop):
     print()
     print("Thumbnail generation completed.")
     print()
-

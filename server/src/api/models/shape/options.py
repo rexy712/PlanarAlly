@@ -61,9 +61,11 @@ class ShapeSetTeleportLocationValue(TypeIdModel):
     value: TeleportLocation
     value: TeleportLocation
 
+
 class ApiShapeSize(BaseModel):
     x: int
     y: int
+
 
 class ShapeSetSizeValue(TypeIdModel):
     shape: str = Field(typeId="GlobalId")
