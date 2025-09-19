@@ -117,7 +117,7 @@ function snapShapeToSquareGrid(position: GlobalPoint, size: ShapeSize): GlobalPo
  * Returns the GlobalPoint that represents the center for a shape of the provided size in the neighbourhood of the provided position in such a way that it is grid aligned.
  * Size should be an integer representing the amount of grid cells the shape spans and NOT a pixel length.
  * The returned point will be the center of a cell for odd sized shapes and a cell corner for even sized shapes.
- * For shapes with an odd width and even height (or vice versa) or a square grid, the returned point will be the midpoint of a cell edge.
+ * For shapes with an odd width and even height (or vice versa) on a square grid, the returned point will be the midpoint of a cell edge.
  * For hex grids two different centers are possible depending on the orientation of the shape, which should be provided with the `oddHexOrientation` parameter.
  */
 export function snapShapeToGrid(
