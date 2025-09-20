@@ -24,9 +24,12 @@ tech changes will usually be stripped from release notes for the public
     - Add effects with infinite timespan
     - Fix names in initiative list not being reactive
 
+- [tech] Replace shape's size attribute with size_x and size_y
+
 ### Fixed
 
 -   Images in the Token Direction indicator were overflowing
+-   Shapes snapping to square grid sometimes offset from grid
 
 ## [2025.3]
 
