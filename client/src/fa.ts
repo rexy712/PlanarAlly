@@ -87,6 +87,10 @@ import {
     faUsers,
     faVideo,
     faWandMagicSparkles,
+    faFolderTree,
+    faDiceD20,
+    faCircleExclamation,
+    faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
 
 export function loadFontAwesome(): void {
@@ -110,6 +114,7 @@ export function loadFontAwesome(): void {
         faChevronRight,
         faChevronUp,
         faCircle,
+        faCircleExclamation,
         faCircleInfo,
         faCircleXmark,
         faClockRotateLeft,
@@ -120,6 +125,7 @@ export function loadFontAwesome(): void {
         faCommentDots,
         faCut,
         faDAndD,
+        faDiceD20,
         faDiceSix,
         faDiscord,
         faDoorClosed,
@@ -132,8 +138,10 @@ export function loadFontAwesome(): void {
         faExternalLinkAlt,
         faEye,
         faFilter,
+        faFloppyDisk,
         faFolder,
         faFolderOpen,
+        faFolderTree,
         faFont,
         faGithub,
         faGripVertical,
